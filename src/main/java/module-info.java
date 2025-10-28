@@ -4,4 +4,6 @@ module com.example.autopago {
 
     opens com.example.autopago to javafx.fxml;
     exports com.example.autopago;
+
+    exports com.example.autopago.pantallas;
 }
