@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: green; -fx-border-style: hidden hidden solid hidden;">
+         <children>
+            <Label text="Escanea tus Productos" textFill="#17723d">
+               <HBox.margin>
+                  <Insets top="16.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </VBox.margin>
+      </ListView>
+      <HBox alignment="CENTER">
+         <children>
+            <Label text="Total:" />
+            <Label text="-" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="16.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
