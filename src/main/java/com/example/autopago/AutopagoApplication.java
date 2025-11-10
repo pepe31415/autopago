@@ -12,16 +12,10 @@ import javafx.stage.Stage;
 public class AutopagoApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Ojo!! el método getResource de una clase busca los recursos en la estructura de diretorios en resources paralela
-        // al paquete donde está. Así pues, si BienvenidaController está en el paquete:
-        //                     com.example.autopago.pantallas
-        //entonces esa instrucción busca dentro del directorio equivalente en resources:
-        //                      src/main/resources/com/example/autopago/pantallas/escaneo.fxml
         FXMLLoader fxmlLoader = new FXMLLoader(AutopagoApplication.class.getResource("pantallas/bienvenida.fxml"));
         Parent root = fxmlLoader.load(); // convierte el fxml en una escena, scene , devuelve el nodo root de el grafo de la escena
         Scene scene = new Scene(root, 720,480);
         primaryStage.setScene(scene); // usamos el stage que ya nos ha dado el javaFX
-        System.out.println(AutopagoApplication.class.getResource("pantallas/SuperTutto.jpg"));
 //        VBox vbox = new VBox();
 //        vbox.setAlignment(Pos.CENTER);
 //        vbox.setSpacing(30);
