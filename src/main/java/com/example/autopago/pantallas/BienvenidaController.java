@@ -35,7 +35,7 @@ public class BienvenidaController {
         stageEscaneo.setScene(scene);
     }
     @FXML
-    private void onComenzarBotonClickNuevasVentanas(ActionEvent actionEvent) throws IOException {
+    private void onComenzarBotonClickNuevaVentana(ActionEvent actionEvent) throws IOException {
         System.out.println("Se ha pulsado boton para comenzar usando nueva ventana o stage");
         FXMLLoader fxmlLoader = new FXMLLoader(BienvenidaController.class.getResource("escaneo.fxml"));
         Parent root = fxmlLoader.load();
