@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Navigator {
-    private Stage primaryStage;
+    private final Stage primaryStage;
     public Navigator(Stage stage) {
         this.primaryStage = stage;
     }
