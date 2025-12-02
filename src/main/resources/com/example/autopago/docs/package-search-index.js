@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.autopago","l":"com.example.autopago"},{"m":"com.example.autopago","l":"com.example.autopago.dispositivos"},{"m":"com.example.autopago","l":"com.example.autopago.pantallas"}];updateSearchResults();
