@@ -2,9 +2,11 @@ package com.example.autopago.dispositivos;
 
 import com.example.autopago.AutopagoApplication;
 import com.example.autopago.Navigator;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -12,9 +14,14 @@ import java.io.IOException;
 
 public class LectorCB {
     AutopagoApplication app = AutopagoApplication.getInstancia();
+    @FXML
+    private TextField textoCB;
     public LectorCB() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(LectorCB.class.getResource("lectorCB.fxml"));
+
+            fxmlLoader.setController(this);
+
             Parent root =  fxmlLoader.load();
             Scene scene = new Scene(root, 400,300);
             Stage stage = new Stage(StageStyle.UTILITY);
@@ -27,5 +34,10 @@ public class LectorCB {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    private void onEscaneoClick() {
+        System.out.println("Escaneo codigo:"+textoCB.getText());
+        textoCB.setText("");
     }
 }
