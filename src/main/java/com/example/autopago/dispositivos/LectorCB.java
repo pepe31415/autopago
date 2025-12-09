@@ -16,6 +16,7 @@ public class LectorCB {
     AutopagoApplication app = AutopagoApplication.getInstancia();
     @FXML
     private TextField textoCB;
+    private EventListener eventListener;
     public LectorCB() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(LectorCB.class.getResource("lectorCB.fxml"));
@@ -37,7 +38,16 @@ public class LectorCB {
     }
     @FXML
     private void onEscaneoClick() {
-        System.out.println("Escaneo codigo:"+textoCB.getText());
+        //System.out.println("Escaneo codigo:"+textoCB.getText());
+        if (eventListener != null) {
+            eventListener.alEscanearCB(textoCB.getText());
+        }
         textoCB.setText("");
+    }
+    public void connect(EventListener eventListener) {
+        this.eventListener = eventListener;
+    }
+    public interface EventListener {
+        void alEscanearCB(String codigoBarras);
     }
 }
