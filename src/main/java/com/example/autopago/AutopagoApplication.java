@@ -2,6 +2,7 @@ package com.example.autopago;
 
 import com.example.autopago.dispositivos.LectorCB;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -91,8 +92,22 @@ public class AutopagoApplication extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         navigator = new Navigator(primaryStage);
-        navigator.navegarA("pantallas/bienvenida.fxml");
+
+
         primaryStage.show();
+        // Deja que JavaFX pinte la ventana y luego sigue
+       /*Platform.runLater( () -> {
+            lectorCB = new LectorCB();
+            navigator.navegarA("pantallas/bienvenida.fxml");
+        });*/
         lectorCB = new LectorCB();
+        navigator.navegarA("pantallas/bienvenida.fxml");
+        //bloqueo hecho a propósito para ver el efecto del Application thread de JavaFX
+        /*try {
+            System.out.println("Esperando 10 segundos..");
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }*/
     }
 }

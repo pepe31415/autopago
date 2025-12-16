@@ -26,6 +26,6 @@ public class EscaneoController implements LectorCB.EventListener {
 
     @Override
     public void alEscanearCB(String codigoBarras) {
-        System.out.println("EscaneoController recibió CB:" + codigoBarras);
+//        System.out.println("EscaneoController recibió CB:" + codigoBarras);
     }
 }
