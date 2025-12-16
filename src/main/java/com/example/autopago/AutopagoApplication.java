@@ -1,6 +1,7 @@
 package com.example.autopago;
 
 import com.example.autopago.dispositivos.LectorCB;
+import com.example.autopago.repositorios.RepositorioProductos;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.layout.*;
@@ -35,6 +36,8 @@ public class AutopagoApplication extends Application {
     public static AutopagoApplication getInstancia() {
         return instancia;
     }
+    private RepositorioProductos repositorioProductos = new RepositorioProductos();
+    public RepositorioProductos getRepositorioProductos() { return repositorioProductos;}
     /**
      * Crea una nueva instancia de la aplicación y la registra como instancia única.
      * <p>
