@@ -91,23 +91,12 @@ public class AutopagoApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
+        lectorCB = new LectorCB();
         navigator = new Navigator(primaryStage);
-
+        navigator.navegarA("pantallas/bienvenida.fxml"); // el lectorCB ya estará creado porque lo hemos creado antes
 
         primaryStage.show();
-        // Deja que JavaFX pinte la ventana y luego sigue
-       /*Platform.runLater( () -> {
-            lectorCB = new LectorCB();
-            navigator.navegarA("pantallas/bienvenida.fxml");
-        });*/
-        lectorCB = new LectorCB();
-        navigator.navegarA("pantallas/bienvenida.fxml");
-        //bloqueo hecho a propósito para ver el efecto del Application thread de JavaFX
-        /*try {
-            System.out.println("Esperando 10 segundos..");
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }*/
+        lectorCB.iniciaryMostrar(); //initOwner ya irá bien porque se ha hecho el show de primaryStage
+
     }
 }

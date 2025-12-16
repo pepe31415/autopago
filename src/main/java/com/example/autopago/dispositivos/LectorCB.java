@@ -18,6 +18,9 @@ public class LectorCB {
     private TextField textoCB;
     private EventListener eventListener;
     public LectorCB() {
+
+    }
+    public void iniciaryMostrar() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(LectorCB.class.getResource("lectorCB.fxml"));
 

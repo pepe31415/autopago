@@ -23,5 +23,7 @@ public class BienvenidaController implements LectorCB.EventListener{
     @Override
     public void alEscanearCB(String codigoBarras) {
         System.out.println("BienvenidaController recibió CB:" + codigoBarras);
+        navigator.navegarA("pantallas/escaneo.fxml");
+
     }
 }
