@@ -1,7 +1,9 @@
 package com.example.autopago;
 
 import com.example.autopago.dispositivos.LectorCB;
+import com.example.autopago.repositorios.RepositorioProductos;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -34,6 +36,8 @@ public class AutopagoApplication extends Application {
     public static AutopagoApplication getInstancia() {
         return instancia;
     }
+    private RepositorioProductos repositorioProductos = new RepositorioProductos();
+    public RepositorioProductos getRepositorioProductos() { return repositorioProductos;}
     /**
      * Crea una nueva instancia de la aplicación y la registra como instancia única.
      * <p>
@@ -90,9 +94,12 @@ public class AutopagoApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        navigator = new Navigator(primaryStage);
-        navigator.navegarA("pantallas/bienvenida.fxml");
-        primaryStage.show();
         lectorCB = new LectorCB();
+        navigator = new Navigator(primaryStage);
+        navigator.navegarA("pantallas/bienvenida.fxml"); // el lectorCB ya estará creado porque lo hemos creado antes
+
+        primaryStage.show();
+        lectorCB.iniciaryMostrar(); //initOwner ya irá bien porque se ha hecho el show de primaryStage
+
     }
 }

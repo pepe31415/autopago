@@ -14,4 +14,11 @@ module com.example.autopago {
 
     opens com.example.autopago.dispositivos;
     exports com.example.autopago.dispositivos;
+
+    opens com.example.autopago.model;
+    exports com.example.autopago.model;
+
+    opens com.example.autopago.repositorios;
+    exports com.example.autopago.repositorios;
+
 }
